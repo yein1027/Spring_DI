@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+
+	<bean class="sample3.PointImpl" id="pt" >
+		<property name="xpos" value="3.0"/>
+		<property name="ypos" value="4.0"/>
+	</bean>
+	 
+	 
+	<!--  <bean class="sample3.PointImpl" id="pt" p:xpos="3.0" p:ypos="4.0"/> -->
+	 
+	 <bean class="sample3.CircleImpl" id="ct">
+		<constructor-arg value="10.0"/>		
+		<constructor-arg ref="pt"/>
+	</bean>
+	
+	<!-- <bean class="sample3.CircleImpl" id="ct" c:radius="10.0" c:point-ref="pt"/> -->
+	
+</beans>
+
+<!-- 
+객체를 넣을 때는 ref 
+sample3.PointImpl pt = new sample3.PointImpl(); 
+pt.setXpos => 이렇게 되기 위해 무조건 소문자로 해야된다
+-->

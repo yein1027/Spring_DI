@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean class="sample5.OrderDaoImpl" id="odao"/>
+	<bean class="sample5.DeliveryDaoImpl" id="ddao"/>
+	
+	<!-- 
+	<bean class="sample5.ServiceImpl" id="service">
+		<property name="odao">
+			<ref bean="odao"/>
+		</property>
+		<property name="ddao">
+			<ref bean="ddao"/>
+		</property>
+	</bean>
+	 -->
+	<bean class="sample5.ServiceImpl" id="service" p:odao-ref="odao" p:ddao-ref="ddao"/>
+
+</beans>
+<!-- 
+p:(setter)메서드이름:넣을 객체변수 위에서 id 설정한 것 
+객체 주입하고 싶으면 -ref 넣기
+-->

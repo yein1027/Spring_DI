@@ -1,0 +1,10 @@
+DI(Dependency Injection:의존 주입)
+-실수 안 하게끔 해 주는 거
+
+1. 생성자 주입
+2. setter getter 주입
+
+
+xml->spring bean으로 만든다
+
+bean 필요한 객체를 한 묶음으로 묶는 것?
